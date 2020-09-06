@@ -1,0 +1,10 @@
+﻿CREATE TABLE [Data].[Pickup]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[Cone] INT NOT NULL,
+	[PickupTimeUTC] DATETIME2 NOT NULL,
+	[Name] VARCHAR(110) NOT NULL,
+	[Teacher] VARCHAR(50) NOT NULL,
+	[GradeLevel] VARCHAR(50) NOT NULL,
+	[RegistrationId] INT NOT NULL
+)

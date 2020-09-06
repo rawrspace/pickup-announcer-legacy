@@ -1,0 +1,7 @@
+﻿CREATE TABLE [Config].[Site]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[NumberOfCones] INT NOT NULL,
+	[AdminUser] NVARCHAR(50) NOT NULL,
+	[AdminPass] NVARCHAR(MAX) NOT NULL
+)

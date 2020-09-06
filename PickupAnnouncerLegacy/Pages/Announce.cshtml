@@ -1,0 +1,83 @@
+﻿@page
+@model PickupAnnouncerLegacy.Pages.AnnounceModel
+@section scripts {
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script>var numberOfCones = @Model.NumberOfCones;</script>
+    <script src="~/js/announce.js"></script>
+}
+@{
+    ViewData["Title"] = "Announcement Panel";
+}
+<div class="row">
+    <div class="col-12 col-sm-6 mb-2 mb-sm-0">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Vehicle Registration Number</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row ml-1 mr-1 mb-2">
+                            <div class="input-group input-group-lg">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="car-icon">
+                                        <i class="fa fa-car" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <input id="carInput" type="text" class="form-control" name="carInput" placeholder="Enter registration number" aria-describedby="car-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(1)">1</button></div>
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(2)">2</button></div>
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(3)">3</button></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(4)">4</button></div>
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(5)">5</button></div>
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(6)">6</button></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(7)">7</button></div>
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(8)">8</button></div>
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(9)">9</button></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mt-2 mb-2"></div>
+                            <div class="col-4 mt-2 mb-2"><button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="addToCarInput(0)">0</button></div>
+                            <div class="col-4 mt-2 mb-2">
+                                <button class="btn btn-lg btn-outline-primary btn-block p-4 border-2" onclick="clearCarInput()">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 mb-2 mb-sm-0">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Cone Selection</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 d-flex">
+                        <div id="cone-container" class="btn-toolbar w-100" role="toolbar" aria-label="Pickup Cone" data-toggle="cone-buttons"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-sm-6 offset-sm-3 mt-sm-4">
+        <button id="sendButton" class="w-100 btn btn-lg btn-primary"><h2>Announce Pickup</h2></button>
+    </div>
+</div>
+

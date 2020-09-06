@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>PickupAnnouncerDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{aaa07a11-761a-4124-b802-1d3e379fef40}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>PickupAnnouncerDB</RootNamespace>
+    <AssemblyName>PickupAnnouncerDB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Data" />
+    <Folder Include="Data\Tables" />
+    <Folder Include="Staging" />
+    <Folder Include="Staging\Sprocs" />
+    <Folder Include="Staging\Tables" />
+    <Folder Include="Data\Sprocs" />
+    <Folder Include="Config" />
+    <Folder Include="Config\Tables" />
+    <Folder Include="Config\PostDeployment" />
+    <Folder Include="Config\Sprocs" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Functions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Data\Schema.sql" />
+    <Build Include="Data\Tables\Student.sql" />
+    <Build Include="Staging\Schema.sql" />
+    <Build Include="Staging\Sprocs\StagingRegistrationDetailsToStudent.sql" />
+    <Build Include="Staging\Tables\RegistrationDetails.sql" />
+    <Build Include="Data\Tables\Vehicle.sql" />
+    <Build Include="Data\Tables\StudentVehicleMap.sql" />
+    <Build Include="Staging\Sprocs\StagingRegistrationDetailsToVehicle.sql" />
+    <Build Include="Staging\Sprocs\StagingRegistrationDetailsToStudentVehicleMap.sql" />
+    <Build Include="Staging\Sprocs\UpdateStagingRegistrationDetailsStudentId.sql" />
+    <Build Include="Staging\Sprocs\UpdateStagingRegistrationDetailsVehicleId.sql" />
+    <Build Include="Staging\Sprocs\StagingRegistrationDetailsCleanup.sql" />
+    <Build Include="Staging\Sprocs\ProcessStagingRegistrationDetails.sql" />
+    <Build Include="Data\Sprocs\DeleteAll.sql" />
+    <Build Include="Data\Sprocs\GetStudentsForRegistrationId.sql" />
+    <Build Include="Data\Sprocs\ExportRegistrationDetails.sql" />
+    <Build Include="Data\Tables\Pickup.sql" />
+    <Build Include="Config\Schema.sql" />
+    <Build Include="Config\Tables\GradeLevel.sql" />
+    <Build Include="Config\Tables\Site.sql" />
+    <Build Include="Config\Sprocs\GetGradeLevelConfigs.sql" />
+    <Build Include="dbo\Functions\STRING_SPLIT.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PickupAnnouncerDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\PostDeployment\Site.PostDeployment.sql" />
+    <None Include="Config\PostDeployment\GradeLevel.PostDeployment.sql" />
+    <None Include="Config\Config.PostDeployment.sql" />
+    <PostDeploy Include="Master.PostDeployment.sql" />
+  </ItemGroup>
+</Project>

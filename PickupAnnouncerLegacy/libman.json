@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "unpkg",
+      "library": "@microsoft/signalr@3.1.7",
+      "destination": "wwwroot/js/signalr/",
+      "files": [
+        "dist/browser/signalr.js",
+        "dist/browser/signalr.min.js"
+      ]
+    },
+    {
+      "library": "font-awesome@5.14.0",
+      "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "jquery@3.5.1",
+      "destination": "wwwroot/lib/jquery/dist/",
+      "files": [
+        "jquery.min.js",
+        "jquery.js",
+        "jquery.min.map"
+      ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "bootstrap@4.5.2",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "LICENSE",
+        "dist/css/bootstrap-grid.css",
+        "dist/css/bootstrap-grid.css.map",
+        "dist/css/bootstrap-grid.min.css",
+        "dist/css/bootstrap-grid.min.css.map",
+        "dist/css/bootstrap-reboot.css",
+        "dist/css/bootstrap-reboot.css.map",
+        "dist/css/bootstrap-reboot.min.css",
+        "dist/css/bootstrap-reboot.min.css.map",
+        "dist/css/bootstrap.css",
+        "dist/css/bootstrap.css.map",
+        "dist/css/bootstrap.min.css",
+        "dist/css/bootstrap.min.css.map",
+        "dist/js/bootstrap.bundle.js",
+        "dist/js/bootstrap.bundle.js.map",
+        "dist/js/bootstrap.bundle.min.js",
+        "dist/js/bootstrap.bundle.min.js.map",
+        "dist/js/bootstrap.js",
+        "dist/js/bootstrap.js.map",
+        "dist/js/bootstrap.min.js",
+        "dist/js/bootstrap.min.js.map"
+      ]
+    },
+    {
+      "library": "bootstrap-fileinput@5.1.2",
+      "destination": "wwwroot/lib/bootstrap-fileinput/",
+      "files": [
+        "js/fileinput.min.js",
+        "css/fileinput.min.css"
+      ]
+    },
+    {
+      "library": "moment.js@2.27.0",
+      "destination": "wwwroot/lib/moment.js/",
+      "files": [
+        "moment.min.js"
+      ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "huebee@2.1.0",
+      "destination": "wwwroot/lib/huebee/",
+      "files": [
+        "dist/huebee.min.css",
+        "dist/huebee.pkgd.min.js"
+      ]
+    }
+  ]
+}

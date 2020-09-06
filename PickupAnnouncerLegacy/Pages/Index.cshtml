@@ -1,0 +1,17 @@
+﻿@page
+@section scripts {
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/lib/moment.js/moment.min.js"></script>
+    <script src="~/js/listen.js"></script>
+}
+@{
+    ViewData["Title"] = "Pickup Announcements";
+}
+<div class="container">
+    <h1>Pickup Announcements</h1>
+    <div class="row">
+        <div class="col-12">
+            <div id="messagesList"></div>
+        </div>
+    </div>
+</div>
