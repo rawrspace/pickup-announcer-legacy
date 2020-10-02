@@ -29,14 +29,13 @@ function addAnnouncement(pickupAnnouncement) {
     var announcementCard = `
         <div class="card-body row">
             <div class="col-4 col-sm-2 p-2">
-                <div class="row d-flex flex-wrap align-items-center h-100">
-                    <div class="col-12">
-                        <div class="card border-0">
-                            <img class="card-img mx-auto" src="images/cone-icon.png" alt="cone ${pickupAnnouncement.cone}">
-                            <div class="card-img-overlay text-white text-center d-flex justify-content-center align-items-center">
-                                <div class="rounded p-1 pb-2 bg-dark text-white">
-                                  <h2>${pickupAnnouncement.cone}</h2>
-                                </div>
+                <div class="h-100">
+                    <div class="col-12 h-100">
+                        <div class="row h-100 align-items-center" style="background-image: url(images/cone-icon.png); background-position: center center; background-size: auto 100px; background-repeat: no-repeat">
+                            <div class="pl-2 pr-2 text-center mx-auto" style="background-color: rgb(255, 255, 255, 0.5)">
+                                <h2>${pickupAnnouncement.cone}</h2>
+                                <h2><span><i class="fa fa-car" aria-hidden="true"></i></span>
+                                ${pickupAnnouncement.car}</h2>
                             </div>
                         </div>
                     </div>
